@@ -26,7 +26,7 @@ abstract class Pile(of T)
     return new @Pile<T>( Tx.AsEnumerable.Concat( Repeat( T0 , 1 ) )
   end operator 
 
-  make public shared operator + ( Tx0 as T , Tx1 as @Pile(Of T) ) as @Pile(oF T)
+  make public shared operator + ( Tx0 as @Pile(of T) , Tx1 as @Pile(Of T) ) as @Pile(oF T)
     return new @Pile<T>( Tx.AsEnumerable.Concat( Tx1.AsEnumerable ) )
   end operator 
 
