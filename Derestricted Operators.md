@@ -1,5 +1,4 @@
-**Derestricted Operators**
-
+## Derestricted Operators
 
 Under the current rules of the VB.net language, some operators require to be implementation in complement pairs.
 
