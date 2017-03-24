@@ -44,9 +44,9 @@ If someArgument Is Nothing Then
 End If
 ``` 
 
- * `Dim x = ...` 
- Provided that the resultant type can easily be inferred by the reader, the specification of the type can omitted.
- * `Dim x As New ...` is prefered over `Dim x As ... = New ....`
+ * `Dim x = ...`    
+ Provided that the resultant type can easily be inferred by the reader, the specification of the type can be omitted.
+ * `Dim x As New ...` is prefered over `Dim x As ... = New ....`    
  To reduce the visual clutter of repeatition of easily knownable type specifiers.
 
  * Field names.
