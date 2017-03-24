@@ -1,4 +1,4 @@
-The current coding guidelines are C-centric, with no or very little guideline for VB.net contributions, for projects within the .NET Foundation that use the language within their project. Thus lack of clear guidelines has and will cause friction between different opinions on stylistic aspects of the code / contribution, rather that the functional / semantic behavior of the code.
+## VB.net Coding Guidelines
 
 ----------
 ### 80 character line limit
