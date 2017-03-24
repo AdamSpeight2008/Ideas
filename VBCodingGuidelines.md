@@ -2,8 +2,8 @@
  
  Coding Conventions
  
- * 80 character line limit
-Recommendation that the maximum length of single line of code.    
+ * 80 character line limit    
+ Is the recommended maximum length of single line of code.    
 *As seen in a text editor, not in the context of the actual language specification*
 
  * Use 4 space indentation, not tabs.
