@@ -53,3 +53,16 @@ End If
    * Begin with a `_` or `m_`
  * Where viable do not specify `Me.`
  * Use `IsNot` over `Not ... Is ...`
+ 
+ 
+ * `Select Case`
+```vbnet
+Select Case obj
+    Case 0
+        ...
+    Case 1
+       ...
+    Case Else
+       ...
+End Select
+```
