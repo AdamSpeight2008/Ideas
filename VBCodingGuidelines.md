@@ -66,3 +66,13 @@ Select Case obj
        ...
 End Select
 ```
+
+ * XML Document comments on Public API boundaries.
+```vbnet
+''' <summary>Add two integers together.</summary>
+''' <param name="left">First integer.</param>
+''' <param name="right">Second integer.</param>
+''' <returns>The result (an integer) of adding two integers together.</returns>
+Public Function Add(left As Integer, right As Integer) As Integer
+End Function
+```
