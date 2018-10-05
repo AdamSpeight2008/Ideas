@@ -52,7 +52,7 @@ End Select
 The abstraction of providing the internal structure of the block, is broken into three distinct sections.
  * Inner Blocks
  * Preamble
- * Prologue
+ * Epilogue
 
 This is due to the blocks not conforming to a common pattern or interface.
 
@@ -85,7 +85,7 @@ Eg `ElseIf expr Then`, `Case 0`, `Catch ex As Exception`.
 
 --------
 
-#### The Preamble
+#### The Epilogue 
   * Some blocks don't encompass of the structure of the block within the inner blocks.
     In those cases, it usual as some form of preamble. 
     * This is an internal section of the block, which is before first occurrance of
@@ -105,7 +105,7 @@ Eg `If expr Then`
 
 --------
 
-#### The Prologue
+#### The Epilogue 
 
 Along the same lines as the preamble, thhis is an internal section of the block which is before the end of block statement and after the ...
   * the last inner block.
@@ -121,6 +121,6 @@ Along the same lines as the preamble, thhis is an internal section of the block 
     * Other examples or `Case Else` and `Finally` sections.
   * This section may not appear in all form of block structures. 
 
-##### Preamble Header
-This is the first statement of the prologue, typically describing an optional last section of the block.
+##### Epilogue Header
+This is the first statement of the Epilogue, typically describing an optional last section of the block.
 Eg `Else`, `Case Else`,`Finally`
