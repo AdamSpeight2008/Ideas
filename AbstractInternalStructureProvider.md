@@ -107,9 +107,19 @@ Eg `If expr Then`
 
 #### The Epilogue 
 
-Along the same lines as the preamble, thhis is an internal section of the block which is before the end of block statement and after the ...
-  * the last inner block.
-  * the preamble, if no inner blocks are present.
+Along the same lines as the preamble this is the optional internal section of the block, which is before the end of block statement and after the ...
+  * last inner block.
+  '''vb
+  Finally
+    ...
+  End Try ' The isn't epilogue but the End Of Block Statement
+  ```
+  ```vbnet
+  Case Else
+    ...
+  End Select ' The isn't epilogue but the End Of Block Statement
+  ```
+  * preamble, if no inner blocks are present.
     * eg
     ```vb
     If expr Then
@@ -118,8 +128,7 @@ Along the same lines as the preamble, thhis is an internal section of the block 
       ' prologue
     End If
     ```   
-    * Other examples or `Case Else` and `Finally` sections.
-  * This section may not appear in all form of block structures. 
+    * Other examples or `Case Else` and `Finally` sections. 
 
 ##### Epilogue Header
 This is the first statement of the Epilogue, typically describing an optional last section of the block.
