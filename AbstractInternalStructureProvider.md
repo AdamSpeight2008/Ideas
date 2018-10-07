@@ -1,6 +1,10 @@
-## AbstractInnerStructureProvider
+# AbstractInnerStructureProvider
 This abstract class provides the common functionality for supplying the internal structures of a block.
 Allowing the block specific functions to providing by the implementing classes.
+
+## Overview
+
+![](http://i64.tinypic.com/anh5w5.png)
 
 ### FullBlock
 The `fullblock` describes the entire span of the block.
