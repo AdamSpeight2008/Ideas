@@ -1,36 +1,42 @@
-## ForEach with index
+## For Each with Index
+I propose that we extend the definition of [LoopControlVariable ](https://github.com/dotnet/vblang/blob/master/spec/statements.md#fornext-statements) to allow the loop to also include the index of each item.
 
-I propose extending the for each statement with additional optional syntax `With identifier_of_index`
-eg
-
-```vbnet
-For Each x As t With i In xs
-  Console.WriteLine($"({i})={x}")
-Next
+### Syntax
 ```
+LoopControlVariable
+    : Identifier ( IdentifierModifiers 'As' TypeName )?
+    | Expression
+    ;
 
-Would be transformed
-```vbnet
-Dim i As Int32 = 9
-For x As t In xs
-  Console.WriteLine($"({i})={x}")
-  ' Compiler-Genarated [
-  i += 1
-  ' ] End of Compiler-Generated
-Next
-```
-Which is then further transformed by the `for-each` lowering.
-
-### Syntax Layout
-
-```
 Syntax WithIndexSyntax
-  WithKeyword As KeywordSyntax
-  Index       As IdentifierNameSyntax
+  WithKeyword As Keyword
+  Index       As Identifier
 End Syntax
 
-Syntax ForEachLoopInfo
-  identifer As IdentiferNameSyntax
-  asType    As Optional(Of AsTypeSyntax)
-  withIndex As Optional(Of WithIndexSyntax)
-End Syntx
+Syntax LoopControlWithIndexVariable Inherits LoopControlVariable 
+  WithIndex As WithIndexSyntax   
+End Syntax
+```
+### Example
+```vbnet
+For Each x As t With index In xs
+  Console.WriteLine( $"({index}) = {x}")
+Next
+```
+
+### Lowering
+The example will be lowered into the following code.
+```vbnet
+' compiler-generated {
+Dim index = 0
+' } end of compiler-generated
+For Each x As t In xs
+  Console.WriteLine($"({index}) = {x}")
+  ' Compiler-generated {
+  index += 1
+  ' } end of compiler-generated
+Next
+```
+
+### Caveats
+The `WithIndex` is to considered as declaring an implied `Dim index As Integer` definition, just before the for each statement.  We makes it subject the restrictions and errors around already declared variables.
