@@ -26,14 +26,14 @@ Dim result = Mulitply( left, right)
 
 Using the we can affectivily write overloads 
 
-
+In the following example, this feature is provided via new Method Specifier prefix `Explicit`.
 ```vbnet
-Function Multiply( left := -1, right as int32): Return -right : End Function
-Function Multiply( left :=  0, right as int32): Return 0      : End Function
-Function Multiply( left := +1, right as int32): Return +right : End Function
-Function Multiply( left as Int32, right:= -1) : Return -left  : End Function
-Function Multiply( left as Int32, right:=  0) : Return 0      : End Function
-Function Multiply( left as Int32, right:= +1) : Return -right : End Function
+Explicit Function Multiply( left := -1, right as int32): Return -right : End Function
+Explicit Function Multiply( left :=  0, right as int32): Return 0      : End Function
+Explicit Function Multiply( left := +1, right as int32): Return +right : End Function
+Explicit Function Multiply( left as Int32, right:= -1) : Return -left  : End Function
+Explicit Function Multiply( left as Int32, right:=  0) : Return 0      : End Function
+Explicit Function Multiply( left as Int32, right:= +1) : Return -right : End Function
 Function Multiply( left as Int32, right As Inr32) : Return (left * right) : End Function
 ```
 
