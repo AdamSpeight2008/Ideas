@@ -1,6 +1,57 @@
-# Range Expression
+# Range Syntax
+
+### Synopisis
+
+Have a syntactic representation for expressing "a range".  
+In VB the exist form that sort of means "range" it the form usesd in the `For Loop Declaration` or in declaring array dimensions'    
+The syntax should independent of usage, and not tied to one cononical definitions.    
+ Eg `0 To 10` doesn't neccessarily indicate that it is an `Enumerable.Range(Of Integer)`, context will also reflect its meaning.
+
+**Example**
 ```vbnet
-  x To y Step z
+Dim xs(0 To 4) As String = {"A", "B", "C", "D", "E"}
+
+For idx = 0 To 4 Step 2
+  Console.Write(xs(idx))
+Next
+```
+
+-----
+```vbnet
+For x As Int32 = 0 To 10 ' 0 To 10 considered to be a "loop-range", and treats as such. (Not an enumerable.)
+Next x
+
+For Each x In 0 To 10 ' 0 To 10 is treated as an IEnumerable Source, and produces a sequence of Int32.
+Next
+
+' Could be used to if a value is within a partical range (inclusive, inclusive)
+Function Does_Character_Represent_A_Decimal_Digit(thisCharacter As Char) As Boolean
+  Return thisCharacter In "0"c To "9"c
+End Function
+```
+-----
+
+
+### Syntactic Representation
+The main parts of the representation consists for two parts, the range (which has as clusivities of;= inclusive lower and inclusive upper).
+
+#### `(fromExpr : Expression) [To] (uptoExpr : Expression)`
+The main parts for the representation appears to be `To` and `Step`
+`To`    for declaring an range (inclusive lower, inclusive upper). Plus an optional part that indicates the stepping to be used within that range.
+
+#### `(range : Range) [Step] (stepExpr : Expression)`
+`Step`  for declaring the size of the stepping to be use within that range. `Step` is also used to indication the direction of the stepping
+
+##### Baisc Ggrammar
+```
+RangeSyntax                         ::= (fromExpr : ExpressionSyntax) [To] (uptoExpr : ExpressionSyntax)    ;;
+SteppedRangeSyntax : RangeSyntax    ::= (base : RangeSyntax) [Step] (stepExpr : ExpressionSyntax)           ;;
+```
+
+
+  * Example
+```vb
+  Dim rangeExpression =  expression [To] expression [Step] expression
 ```
 A `Range Expression` allows us to express the concept of a Range of Values. eg; 0 To 9. Think of this a starting at 0 and ending at 9.
 The clusivity of the `start` and `end` values are always inclusive (and can not be altered), as this allow the full ranges of values in a type to be expressed. eg
@@ -35,3 +86,20 @@ End Function
 ```
 
   * Enumerate the values and check if value is in that sequence.
+
+-------------
+
+### Syntax Representation
+
+```vbnet
+Syntax RangeSyntax
+    FromExpr    As  ExpressionSyntax
+    [To]        As  ToKeywordSyntax
+    UpToExpr    As  ExpressionSyntax
+End Syntax
+
+Syntax SteppedRangeSyntax   Inherits    RangeSyntax
+    [Step]      As  StepKeywordSyntax
+    StepExpr    As  ExpressionSyntax
+End Syntax
+```
