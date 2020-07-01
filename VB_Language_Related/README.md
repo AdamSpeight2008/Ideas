@@ -16,7 +16,7 @@ This repo is a collection of ideas and concepts, related to the Visual Basic pro
 |  11   | Const Blocks                           | ```Const type ... End Const ``` <br />[Constant Blocks](Constant_Block.md)
 |  12   | Un/Checked Expressions                 | `Unchecked expr` <br /> don't use overflow checks. <br /> [UnChecked Expressions](UnChecked_Expression.md)
 |  13   | Un/Cheked Blocks                       | `Unchecked ... End Unchecked` { ... }` <br /> don't use overflow checks within this block. <br /> [UnChecked Blocks](UnChecked_Blocks.md)
-|  14   | Type Clause                            | `Case Is type` <br /> `Case Is type Into expr` <br /> `Case IsNot type` <br /> Extend Case clauses to cover type selection. <br /> [Type Clause](Type_Clauses.md)
+|  14   | Type Clause                            | `Case Is type` <br /> `Case Is type Into expr` <br /> `Case IsNot type` <br /> Extend Case clauses to cover type selection. <br /> [Type Clause](TypeCheck_Clause.md)
 |  15   | Into Declarations                      | `(TypeOf expr Is Example Into thisExample` <br /> Put some aspect of expression (on the left side) into the declaration / expression on the right side. [Into Declarations](Into_Declarations.md)
 |  16   | Out Declarations                       | `Integer.TryParse( text, Out value )` <br /> Declare a variable whilst calling a method. <br /> [Out Declarations](Out_Declarations.md)
 |  17   | Flags Enum Operators                   | Operators that make it easier to make use of `<flags> Enum`. <br /> IsFlagsSet / SetFlag / ClearFlag / AnyFlagSet <br /> [Flags Enum Operators](Flags_Enum_Operators.md)
