@@ -22,4 +22,4 @@ This repo is a collection of ideas and concepts, related to the Visual Basic pro
 |  17   | Flags Enum Operators                   | Operators that make it easier to make use of `<flags> Enum`. <br /> IsFlagsSet / SetFlag / ClearFlag / AnyFlagSet <br /> [Flags Enum Operators](Flags_Enum_Operators.md)
 |  18   | Derestict Method Body Placement        | Permit the declaring of a method on the same line as it signature, provide us use ` : ` as the statement continuation. <br /> [Method Body Placement](Method_Body_Placement.md) 
 |  19   | With Using Block                       | Add the `With Block` ability to `Using Block` <br /> [With_Using_Block](With_Using_Block.md)
-|  20   |                                        |
+|  20   |  (LINQ) Zip Query Syntax                     | Extens the LINQ Query syntax with the Zip operator <br /> [Linq Zip Clause](Linq_Zip_Clause.md)

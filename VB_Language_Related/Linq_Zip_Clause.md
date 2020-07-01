@@ -1,12 +1,27 @@
+## Zip Query Syntax
+
+[Documentation on ZIP method.](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.zip?view=netframework-4.8)
 Prior Art: [Roslyn-8221](https://github.com/dotnet/roslyn/issues/8221)
 [Roslyn-100](https://github.com/dotnet/roslyn/issues/100)
 
-From [VB Lang, 525](https://github.com/dotnet/vblang/issues/525), separating out the discussion around a Zip operator
+From #525, separating out the discussion around a Zip operator
 
 ```vbnet
+Dim  xs = {0, 1, 2, 4}
+Dim  ys = {"A"c, "B"c, "C"c, "D"c, "E"c}
 Dim  zs = From x In xs Zip y In ys
-          Select (x , y)
+          Select New With {.x = x, .y = y)
 ```
+Output
+```
+{ x = 0, y = A }
+{ x = 1, y = B }
+{ x = 2, y = C }
+{ x = 4, y = D }
+```
+
+
+
 This would be lowered in to a call to `Enumerable.Zip` function. eg.
 ```vbnet
 Dim zs = Enumerable.Zip(xs,ys, Function(x,y) (x,y) )
