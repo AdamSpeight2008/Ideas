@@ -20,4 +20,5 @@ This repo is a collection of ideas and concepts, related to the Visual Basic pro
 |  15   | Into Declarations                      | `(TypeOf expr Is Example Into thisExample` <br /> Put some aspect of expression (on the left side) into the declaration / expression on the right side.
 |  16   | Out Declarations                       | `Integer.TryParse( text, Out value )` <br /> Declare a variable whilst calling a method.
 |  17   | Flags Enum Operators                   | Operators that make it easier to make use of `<flags> Enum`. <br /> IsFlagsSet / SetFlag / ClearFlag / AnyFlagSet <br /> [Flags Enum Operators](Flags_Enum_Operators.md)
-|  18   | ???                                    | ???
+|  18   | Derestict Method Body Placement        | Permit the declaring of a method on the same line as it signature, provide us use ` : ` as the statement continuation 
+|  19   |                                        |
