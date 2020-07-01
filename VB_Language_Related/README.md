@@ -5,7 +5,7 @@ This repo is a collection of ideas and concepts, related to the Visual Basic pro
 |  No.  | **Title**                              | **Synopsis**                                                                     | 
 |------:|:---------------------------------------|:---------------------------------------------------------------------------------|
 |   1   | Default Optional Parameters            | `Optional arg As String` <br />[Default Optional Parameters](/Default_Optional_Parameters.md)                    
-|   2   | Deresticted Operators                  | Removes the restriction on compliementy-pair of operators. Such `<` and `>`. <br />  [Derestricted Operators]("Derestricted_Operators.md") |     
+|   2   | Deresticted Operators                  | Removes the restriction on compliementy-pair of operators. Such `<` and `>`. <br />  [Derestricted Operators](Derestricted_Operators.md) |     
 |   3   | TypeOf Many                            | `TypeOf expr Is (Of T0 .., Tn)` <br /> Extend `TypeOf` to cover multiple types.                      
 |   4   | Range Syntax                           | `fromExpr To uptoExpr` <br /> `fromExpr To uptoExpr Step stepExpr` <br /> [Range Expression](RangeExpressions.md)                |   5   | ZIP Query Syntax                       | `From x In xs Zip y In ys` <br /> [Linq Zip Clause]("Linq_Zip_Clause.md")
 |   6   | For Each With Index                    | `For Each x As Tx With idx In xs` <br /> For-Each block that also includes the sequence index of the item.                      
