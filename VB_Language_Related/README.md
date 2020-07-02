@@ -8,6 +8,7 @@ This repo is a collection of ideas and concepts, related to the Visual Basic pro
 |   2   | Deresticted Operators                  | Removes the restriction on compliementy-pair of operators. Such `<` and `>`. <br />  [Derestricted Operators](Derestricted_Operators.md) |     
 |   3   | TypeOf Many                            | `TypeOf expr Is (Of T0 .., Tn)` <br /> Extend `TypeOf` to cover multiple types. <br /> [TypeOf Many Expressions](TypeOf_Many.md)                    
 |   4   | Range Syntax                           | `fromExpr To uptoExpr` <br /> `fromExpr To uptoExpr Step stepExpr` <br /> [Range Expression](RangeExpression.md)                |   5   | ZIP Query Syntax                       | `From x In xs Zip y In ys` <br /> [Linq Zip Clause](Linq_Zip_Clause.md)
+|   5   | Local Imports                          | Namespace local imports         |
 |   6   | For Each With Index                    | `For Each x As Tx With idx In xs` <br /> For-Each block that also includes the sequence index of the item. <br /> [For Each With Index](For_Each_With_Index.md)                    
 |   7   | Guarded Statements                     | `statement When expr` <br /> [Guarded Statements](Guarded_Statements.md)                                        
 |   8   | With Clause                            | `With { ... }` <br /> recursive clause. [With Clause](WithClause.md)
