@@ -18,3 +18,29 @@ From x In xs
 Order By x Ascending Using this_IEqualityComparer
 Group By x.y Into gs Using thisOther_IComparabl
 ```
+
+`Order By` tree
+```
+		     Using
+                    /     \
+               Order       this_IEqualityComparer
+		    \ 
+                     By
+                    /
+           Ascending
+          /
+         x      
+```
+
+`Group By` tree
+```
+		Using
+               /     \
+           Into       thisOther_IComparable
+          /    \
+     Group      group_name
+          \
+           By
+          /
+         x.y
+```
