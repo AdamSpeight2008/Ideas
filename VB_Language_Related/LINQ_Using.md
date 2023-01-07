@@ -44,3 +44,13 @@ Group By x.y Into gs Using thisOther_IComparabl
           /
          x.y
 ```
+
+### Example
+```vbnet
+    Dim xs = {"A2","A10","a1","B10","b2"}
+    Dim r = From x In xs
+            Order By x Ascending Using StringComparer.OrdinalIgnoreCase
+            Select x
+    ' r is expected to be { "a1", "A2", "A10", "b2", "B10")
+    ' not { "a1", "A10", "A2", "B10", "B2" }
+```
